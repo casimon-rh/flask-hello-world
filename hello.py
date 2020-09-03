@@ -4,7 +4,6 @@ from flask import Flask
 import requests
 import os
 
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,7 +13,7 @@ def hello_world():
 @app.route('/send')
 def send():
     try:
-        return "response: {}".format(requests.get(os.environ.get('SERVER_URL')).json())
+        return "response: {}".format(requests.get(os.environ.get('SERVER_URL')).text)
     except Exception as ex:
         print(ex)
         return "error"
