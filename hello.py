@@ -24,8 +24,8 @@ def send():
                 os.environ.get('SERVER_URL'),
                 verify=os.environ.get('CA_URL'),
                 cert=(
-                    "{}/client.crt".format(os.environ.get('CERTS_URL')),
-                    "{}/client.key".format(os.environ.get('CERTS_URL'))
+                    "{}/crt/client.crt".format(os.environ.get('CERTS_URL')),
+                    "{}/key/client.key".format(os.environ.get('CERTS_URL'))
                 )
             ).text)
         return result
